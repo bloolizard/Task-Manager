@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+    <style>
+        body{
+            padding: 5%;
+            margin: auto;
+            text-align: center;
+        }
+        input {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <a id="show_tasks" href="#/show_task">Show Tasks</a>
+    <a id="show_create_tasks" href="#/create_task">Create Tasks Controller</a>
+</div>
+<div id="create_task_container" class="create_task_container">
+    <form id="task_form">
+    <h1>Create A Task</h1>
+    <div>
+        <input type="text" name="description"  id="description" placeholder="description"/>
+        <input type="number" name="status" id="status" placeholder="status"/>
+        <input type="number" name="priority" id="priority" placeholder="priority"/>
+        <input type="text" name="tags" id="tags" placeholder="tags"/>
+        <input type="text" name="notes" id="notes" placeholder="notes"/>
+        <br/>
+        <br/>
+        <button id="create_task">Create Task</button>
+
+    </div>
+    </form>
+</div>
+<div id="show_tasks_container" class="show_task_container">
+    <h1>Show Tasks</h1>
+    <div>
+Show Tasks: Some Tasks
+
+    </div>
+</div>
+<script src="/js/task_maker.js">
+</script>
+</body>
+</html>
