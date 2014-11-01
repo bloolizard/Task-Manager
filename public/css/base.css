@@ -14,17 +14,28 @@ input, select, textarea {
 
 header {
     background-color: #eee;
-    padding: 1em;
+    padding: 1em 0;
+
+    width: 100%;
     position: fixed;
+    top: 0;
 }
+
+header > div {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
 div.brand {
     font-weight: 600;
     float: left;
 }
 div.nav {
+    display: inline-block;
+    float: right;
 }
 div.nav > a {
-    float: right;
+    /*float: right;*/
     padding-left: 10px;
     text-decoration: none;
     color: black;
@@ -33,9 +44,10 @@ div.clear {
     clear: both;
 }
 
-div.create_task_container {
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+div#create_task_container, div#show_tasks_container {
+    margin-top: 4em;
+    margin-right: 1em;
+    margin-left: 1em;
     text-align: center;
 }
 
