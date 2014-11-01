@@ -34,7 +34,7 @@ var task1 = new TaskModel({
 
 
 router.get('/', function(req, res){ // req.query.
-    TaskModel.find({priority: req.query.priority, status: req.query.status},function(err, results){
+    TaskModel.find(function(err, results){
         if (err) {
             res.status(500).json({details: results});
         }
@@ -45,7 +45,20 @@ router.get('/', function(req, res){ // req.query.
     });
 });
 
+router.delete('/:id', function(req, res){
+    console.log(req.params.id);
+    TaskModel.remove({_id: req.params.id}, function(err, results){
+        if (err) {
+            console.log(err);
+            res.status(500).json({details: results});
 
+        }
+        else {
+            console.log(results);
+            res.status(200).json(results);
+        }
+    });
+});
 
 
 module.exports = router;

@@ -1,0 +1,83 @@
+body {
+    font: 200 1em 'Helvetica Neue', 'Segoe UI', 'Droid Sans', 'Helvetica';
+    padding: 0;
+    margin: 0;
+}
+
+input, select, textarea {
+    font: 200 1em 'Helvetica Neue', 'Segoe UI', 'Droid Sans', 'Helvetica';
+    outline: none;
+    border: 1px solid #eee;
+    padding: 0.35em 0.5em;
+    background-color: transparent;
+}
+
+header {
+    background-color: #eee;
+    padding: 1em;
+}
+div.brand {
+    font-weight: 600;
+    float: left;
+}
+div.nav {
+}
+div.nav > a {
+    float: right;
+    padding-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+div.clear {
+    clear: both;
+}
+
+div.create_task_container {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    text-align: center;
+}
+
+div.task_input_box {
+    margin-bottom: 0.4em;
+}
+div.task_input_box > input {
+    margin: 0.1em;
+}
+
+/* Hide Views By Default*/
+#create_task_container, #show_tasks_container {
+    display: none;
+}
+
+/* Show Task Container*/
+
+.task_item {
+    border: 1px solid black;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    padding: 2em;
+    background-color: #979797;
+    line-height: 1.5;
+    text-align: center;
+    position: relative;
+
+}
+
+.task_item > span {
+    display: block;
+}
+
+span.description {
+    font-weight: 600;
+}
+span.notes {
+    font-size: smaller;
+}
+
+div.icons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.25em;
+}
