@@ -15,6 +15,7 @@ input, select, textarea {
 header {
     background-color: #eee;
     padding: 1em;
+    position: fixed;
 }
 div.brand {
     font-weight: 600;
