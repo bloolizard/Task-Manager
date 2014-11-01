@@ -121,10 +121,10 @@ function createElement(type, innerHTML, parent){
 var create_task_btn = document.getElementById('create_task');
 create_task_btn.addEventListener('click', function(e){
     e.preventDefault();
-    createServerRequest();
+    createServerRequest(getFormObject());
 });
 
-function createServerRequest(){
+function getFormObject(){
     var form = document.forms.task_form;
     var obj = {
         description: form.description.value,
@@ -133,5 +133,17 @@ function createServerRequest(){
         tags: form.tags.value,
         notes: form.notes.value
     };
-    console.log(obj);
+    return obj;
+}
+
+function createServerRequest(form_obj){
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/tasks' );
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.addEventListener('readystatechange', function(){
+        if (xhr.status === 200 && xhr.readyState === 4){
+            console.log(xhr.responseText);
+        }
+    });
+    xhr.send(JSON.stringify(form_obj));
 }

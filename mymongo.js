@@ -45,6 +45,21 @@ router.get('/', function(req, res){ // req.query.
     });
 });
 
+router.post('/', function(req, res){
+    console.log(req.body);
+    (new TaskModel(req.body)).save(function (err, results){
+        if (err){
+            console.log(err);
+            res.status(500).json({details: results});
+        }
+        else {
+            console.log(results);
+            res.status(200).json(results);
+        }
+
+    });
+});
+
 router.delete('/:id', function(req, res){
     console.log(req.params.id);
     TaskModel.remove({_id: req.params.id}, function(err, results){
